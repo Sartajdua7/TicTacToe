@@ -80,6 +80,14 @@ public class TicTacToe implements Player{
 				}
 			}
 			if(numOfTurns >= 2) {
+				for(int i = 0; i < board.length; i++) {
+					if(board[i][0] == 2 && board[i][2] == 2 && board[i][1] == 0) {
+						return i + "1";
+					}
+					if(board[0][i] == 2 && board[2][i] == 2 && board[1][i] == 0) {
+						return "1" + i;
+					}
+				}
 				for(int i = 0; i < board.length-1; i++) {
 					for(int r = 0; r < board.length; r++) {
 						if(board[r][i] == 2 && board[r][i+1] == 2) {
@@ -104,6 +112,10 @@ public class TicTacToe implements Player{
 								}
 						}
 						}
+					}}
+				for(int i = 0; i < board.length-1; i++) {
+					for(int r = 0; r < board.length; r++) {
+						
 						if(board[r][i] == 1 && board[r][i+1] == 1) {
 							if(i == 1 && board[r][0] == 0) {
 								return r + "0";
@@ -126,6 +138,7 @@ public class TicTacToe implements Player{
 						}
 					}
 				}
+
 				for(int i = 0; i < board.length; i++) {
 					if(board[i][0] == 1 && board[i][2] == 1 && board[i][1] == 0) {
 						return i + "1";
@@ -133,33 +146,7 @@ public class TicTacToe implements Player{
 					if(board[0][i] == 1 && board[2][i] == 1 && board[1][i] == 0) {
 						return "1" + i;
 					}
-					if(board[i][0] == 2 && board[i][2] == 2 && board[i][1] == 0) {
-						return i + "1";
-					}
-					if(board[0][i] == 2 && board[2][i] == 2 && board[1][i] == 0) {
-						return "1" + i;
-					}
 				}
-				
-				if(board[0][0] == 1 && board[2][2] == 1 && board[1][1] == 0) {
-					return "11";
-				}
-				else if(board[2][0] == 1 && board[0][2] == 1 && board[1][1] == 0) {
-					return "11";
-				}
-				else if(board[0][0] == 1 && board[1][1] == 1 && board[2][2] == 0) {
-					return "22";
-				}
-				else if(board[2][0] == 1 && board[1][1] == 1 && board[0][2] == 0) {
-					return "02";
-				}
-				else if(board[0][2] == 1 && board[1][1] == 1 && board[2][0] == 0) {
-					return "20";
-				}
-				else if(board[2][2] == 1 && board[1][1] == 1 && board[0][0] == 0) {
-					return "00";
-				}
-				
 				
 				
 				if(board[0][0] == 2 && board[2][2] == 2 && board[1][1] == 0) {
@@ -180,6 +167,29 @@ public class TicTacToe implements Player{
 				else if(board[2][2] == 2 && board[1][1] == 2 && board[0][0] == 0) {
 					return "00";
 				}
+				
+				
+				
+				if(board[0][0] == 1 && board[2][2] == 1 && board[1][1] == 0) {
+					return "11";
+				}
+				else if(board[2][0] == 1 && board[0][2] == 1 && board[1][1] == 0) {
+					return "11";
+				}
+				else if(board[0][0] == 1 && board[1][1] == 1 && board[2][2] == 0) {
+					return "22";
+				}
+				else if(board[2][0] == 1 && board[1][1] == 1 && board[0][2] == 0) {
+					return "02";
+				}
+				else if(board[0][2] == 1 && board[1][1] == 1 && board[2][0] == 0) {
+					return "20";
+				}
+				else if(board[2][2] == 1 && board[1][1] == 1 && board[0][0] == 0) {
+					return "00";
+				}
+				
+
 				}
 			if(board[0][1] == 1 && board[1][0] == 1) {
 				return "00";
